@@ -36,4 +36,13 @@
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/servlet/LoginServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ProInfoServlet</servlet-name>
+  	<servlet-class>servlet.ProInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProInfoServlet</servlet-name>
+  	<url-pattern>/servlet/ProInfoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

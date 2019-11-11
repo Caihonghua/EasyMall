@@ -76,6 +76,8 @@ public class LoginServlet extends HttpServlet {
 				user.setNickname(rs.getString("nickname"));
 				user.setEmail(rs.getString("email"));
 				request.getSession().setAttribute("user", user);
+				
+				
 				response.sendRedirect(request.getContextPath()+"/EasyMallPage/index/index.jsp");
 			}
 		}catch(Exception e) {
