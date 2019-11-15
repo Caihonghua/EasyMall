@@ -45,4 +45,22 @@
   	<servlet-name>ProInfoServlet</servlet-name>
   	<url-pattern>/servlet/ProInfoServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ProductImgServlet</servlet-name>
+  	<servlet-class>servlet.ProductImgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProductImgServlet</servlet-name>
+  	<url-pattern>/servlet/ProductImgServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ProductListServlet</servlet-name>
+  	<servlet-class>servlet.ProductListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProductListServlet</servlet-name>
+  	<url-pattern>/servlet/ProductListServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
