@@ -10,6 +10,21 @@
     <welcome-file>/EasyMallPage/regist/regist.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- 配置HttpSessionListener监听器 -->
+	<listener>
+		<listener-class>listener.MyHttpSessionListener</listener-class>
+	</listener>
+	
+	<!-- 配置ServletContextListener监听器 -->
+ 	<listener>
+ 		<listener-class>listener.MyServletContextListener</listener-class>
+	</listener>
+ 
+  <context-param>
+  	<param-name>encode</param-name>
+  	<param-value>utf-8</param-value>
+  </context-param>
+  
   <servlet>
     <servlet-name>RegistServlet</servlet-name>
     <servlet-class>servlet.RegistServlet</servlet-class>
@@ -62,5 +77,41 @@
   <servlet-mapping>
   	<servlet-name>ProductListServlet</servlet-name>
   	<url-pattern>/servlet/ProductListServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>CartAddServlet</servlet-name>
+  	<servlet-class>servlet.CartAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CartAddServlet</servlet-name>
+  	<url-pattern>/servlet/CartAddServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AjaxUpdateBuyNumServlet</servlet-name>
+  	<servlet-class>servlet.AjaxUpdateBuyNumServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AjaxUpdateBuyNumServlet</servlet-name>
+  	<url-pattern>/servlet/AjaxUpdateBuyNumServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>OrderAddServlet</servlet-name>
+  	<servlet-class>servlet.OrderAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>OrderAddServlet</servlet-name>
+  	<url-pattern>/servlet/OrderAddServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>OrderListServlet</servlet-name>
+  	<servlet-class>servlet.OrderListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>OrderListServlet</servlet-name>
+  	<url-pattern>/servlet/OrderListServlet</url-pattern>
   </servlet-mapping>
 </web-app>

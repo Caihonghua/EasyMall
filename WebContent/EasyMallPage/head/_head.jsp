@@ -11,7 +11,7 @@
 		if(request.getSession().getAttribute("user")!=null){
 			User user = (User)request.getSession().getAttribute("user");
 			out.write("欢迎"+user.getUsername()+"回来!");
-			out.write("&nbsp;|&nbsp;<a href='exit.jsp'>退出</a>");
+			out.write("&nbsp;|&nbsp;<a href='../exit/exit.jsp'>退出</a>");
 		}else{
 		 %>
 		
@@ -26,15 +26,15 @@
 		<input type="text" name=""/>
 		<input type="button" value="搜 索"/>
 		<span id="goto">
-			<a id="goto_order" href="#">我的订单</a>
-			<a id="goto_cart" href="#">我的购物车</a>
+			<a id="goto_order" href="${app }/servlet/OrderListServlet">我的订单</a>
+			<a id="goto_cart" href="${app }/EasyMallPage/cart/cart.jsp">我的购物车</a>
 		</span>
 		<img id="erwm" src="<%=request.getContextPath()%>/EasyMallPage/head/img/head/qr.jpg"/>
 	</div>
 	<div id="line3">
 		<div id="content">
 			<ul>
-				<li><a href="#">首页</a></li>
+				<li><a href="${app }/EasyMallPage/index/index.jsp">首页</a></li>
 				<li><a href="${ pageContext.request.contextPath }/servlet/ProductListServlet">全部商品</a></li>
 				<li><a href="#">手机数码</a></li>
 				<li><a href="#">电脑平板</a></li>

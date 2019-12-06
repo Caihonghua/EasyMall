@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-	<link href="${pageContext.request.contextPath}/css/prodList.css" rel="stylesheet" type="text/css">
+	<link href="${pageContext.request.contextPath}/EasyMallPage/product/css/prodList.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -19,24 +19,24 @@
 			</form>
 		</div>
 		<div id="prod_content">
-		<c:forEach items="${list }" var="prod">
+		<c:forEach items="${list }" var="product">
 		
 			<div class="prod_div">
 			
-				<a href ="${pageContext.request.contextPath}/servlet/ProInfoServlet?pid=${prod.id}" >
-				<img src="${pageContext.request.contextPath}/servlet/ProductImgServlet?imgurl=${prod.imgurl}"/>
+				<a href ="${pageContext.request.contextPath}/servlet/ProInfoServlet?pid=${product.id}" >
+				<img src="${pageContext.request.contextPath}/servlet/ProductImgServlet?imgurl=${product.imgurl}"/>
 				</a>
 				<div id="prod_name_div">
-				<a href ="${pageContext.request.contextPath}/servlet/ProdInfoServlet?pid=${prod.id}" >
-					${prod.name}
+				<a href ="${pageContext.request.contextPath}/servlet/ProInfoServlet?pid=${product.id}" >
+					${product.name}
 				</a>
 				</div>
 				<div id="prod_price_div">
-					￥ ${prod.price} 元
+					￥ ${product.price} 元
 				</div>
 				<div>
 					<div id="gotocart_div">
-						<a href="#">加入购物车</a>
+						<a href="${ pageContext.request.contextPath }/servlet/CartAddServlet?pid=${product.id}&buyNum=1">加入购物车</a>
 					</div>					
 					<div id="say_div">
 						133人评价

@@ -46,6 +46,7 @@ public class ProInfoServlet extends HttpServlet {
 			conn=JDBCUtils.getConn();
 			String sql="select * from products where id=?";
 			ps=conn.prepareStatement(sql);
+			ps.setString(1, pid);
 			rs=ps.executeQuery();
 			if(rs.next()) {
 				product.setId(rs.getString("id"));
@@ -57,9 +58,10 @@ public class ProInfoServlet extends HttpServlet {
 				product.setImgurl(rs.getString("imgurl"));
 			}
 			
-			request.setAttribute("product", product);
-			request.getRequestDispatcher(request.getContextPath()+"/EasyMallPage/"
-					+ "product/prod_info.jsp").forward(request, response);;
+			request.setAttribute("prod", product);
+			request.getRequestDispatcher("/EasyMallPage/product/prod_info.jsp")
+			.forward(request, response);
+			System.out.println(request.getContextPath());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
